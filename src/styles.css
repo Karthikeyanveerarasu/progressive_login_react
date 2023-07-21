@@ -1,0 +1,293 @@
+* {
+  outline: none;
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  color: #424245;
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: #9999a2;
+}
+
+input:-ms-input-placeholder {
+  color: #9999a2;
+}
+
+input::-moz-placeholder {
+  color: #9999a2;
+  opacity: 1;
+}
+
+input:-moz-placeholder {
+  color: #9999a2;
+  opacity: 1;
+}
+
+#password input::placeholder {
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+#password input {
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+#password input::-webkit-input-placeholder {
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+#password input:-ms-input-placeholder {
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+#password input::-moz-placeholder {
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+#password input:-moz-placeholder {
+  font-weight: normal;
+  letter-spacing: 0;
+}
+
+body,
+input {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#app-cover {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  max-width: 420px;
+  padding: 20px;
+  margin: -70px auto 0 auto;
+}
+
+#heading {
+  color: #5f5f64;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0 0 20px 0;
+}
+
+#inp-box-cover {
+  position: relative;
+  width: 111px;
+  height: 6px;
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) all, 0s ease border;
+}
+
+#heading {
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1) all;
+}
+
+#app-cover.active #heading {
+  margin-top: -57px;
+  margin-bottom: 77px;
+}
+
+#app-cover.active #inp-box-cover {
+  width: 420px;
+  height: 57px;
+  margin-top: -57px;
+  border: 1px solid #5f5f64;
+  box-shadow: inset 0 2px 2px #fff;
+}
+
+#inp-padd {
+  padding: 15px 0 21px 15px;
+}
+
+.inp-box {
+  position: relative;
+  bottom: -36px;
+  padding-right: 87px;
+  opacity: 0;
+  transition: 0.6s ease-in-out all, 1.2s ease-out opacity;
+}
+
+.inp-box.active {
+  bottom: 0;
+  opacity: 1;
+}
+
+.inp-box#username.active {
+  bottom: 21px;
+}
+
+.inp-box#password.active {
+  bottom: 42px;
+}
+
+.inp-box.inactive {
+  bottom: 36px;
+  opacity: 0;
+}
+
+.inp-box#username.inactive {
+  bottom: 57px;
+}
+
+.inp-box#password.inactive {
+  bottom: 78px;
+}
+
+#prev-action-btn,
+#next-action-btn {
+  position: absolute;
+  top: 0;
+  right: 15px;
+  bottom: 0;
+  width: 28.5px;
+  height: 51px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#prev-action-btn {
+  right: 43.5px;
+}
+
+#next-action-btn i,
+#prev-action-btn i {
+  position: relative;
+  left: -5px;
+  display: block;
+  width: 21px;
+  color: #5f5f64;
+  font-size: 21px;
+  padding: 15px 0 15px 7.5px;
+  line-height: 1;
+  opacity: 0;
+  transition: 0.3s ease-in-out all;
+  cursor: pointer;
+}
+
+#prev-action-btn i {
+  left: 5px;
+  padding-left: 0;
+  padding-right: 7.5px;
+}
+
+#prev-action-btn.active i,
+#next-action-btn.active i {
+  left: 0;
+  opacity: 1;
+}
+
+#progress-bar-cover {
+  position: absolute;
+  top: 51px;
+  bottom: 0;
+  left: 0;
+  height: 6px;
+  width: 100%;
+  background-color: #e7e7e7;
+  transition: 0.5s ease all;
+  z-index: 1;
+}
+
+#progress-bar-cover.hide-form {
+  top: 0;
+  height: 100%;
+}
+
+#progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  color: transparent;
+  width: 0%;
+  background-color: #5f5f64;
+  transition: 0.5s ease all;
+}
+
+#progress-bar-cover.hide-form #progress {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+}
+
+#progress i {
+  margin-left: 5px;
+}
+
+#working {
+  font-size: 16px;
+  line-height: 1;
+  padding: 3.5px;
+  transform: scale(1);
+  display: none;
+}
+
+#working.inactive {
+  transform: scale(0);
+  transition: 0.5s ease all;
+}
+
+#working i {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  color: #9c9c9c;
+  font-size: 15px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+#acc-success {
+  position: absolute;
+  top: 57px;
+  right: 0;
+  left: 0;
+  padding: 16px 0;
+  opacity: 0;
+  transition: 0.5s ease all;
+}
+
+#acc-success.active {
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+}
+
+#init-login {
+  float: right;
+  font-size: 14px;
+  line-height: 1;
+  padding: 6px 10px 8px 10px;
+  margin: -1px 15px 0 0;
+  cursor: pointer;
+  border-radius: 20px;
+  background-color: #7d7d7d;
+  box-shadow: 0 0 0 1px #4d4d4d;
+}
